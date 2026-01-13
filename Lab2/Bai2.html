@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>Bài 2 - Form thông tin</title>
+</head>
+
+<body>
+    <h1 class="text-center mt-3">TS01995 - Nguyễn Văn Bảo</h1>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="boder p-4 rounded shadow-sm bg-white h-100">
+                <form>
+                    <h3>Form Đăng ký thông tin</h3>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Họ và tên</label>
+                        <input type="email" class="form-control" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Nhập Email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Số điện thoại</label>
+                        <input type="email" class="form-control" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Mật khẩu</label>
+                        <input type="email" class="form-control" placeholder="Nhập mật khẩu">
+                    </div>
+
+                    <div class="mb-3">
+                        
+                        <label for="exampleInputEmail1" class="form-label">Xác nhận mật khẩu</label>
+                        <input type="email" class="form-control" placeholder="Xác nhận lại mật khẩu">
+                    </div>
+
+                     
+                    <div class="form-check form-check-inline">
+                        <label class="form-label d-block">Giới tính</label>
+                        <input class="form-check-input" type="radio" name="gioitinh" id="nam"
+                            value="option1">
+                        <label class="form-check-label" for="nam">nam</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gioitinh" id="nu"
+                            value="option2">
+                        <label class="form-check-label" for="nu">nữ</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Ngôn ngữ</label>
+                        <select class="form-select">
+                            <option selected value="Tiếng Việt">Tiếng Việt</option>
+                            <option value="Tiếng Anh">Tiếng Anh</option>
+                            <option value="Tiếng Nhật">Tiếng Nhật</option>
+                        </select>
+                        
+                    </div>
+
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                </div>
+
+            </div>
+            <div class="col-md-6 ">
+                <div class="boder p-4 rounded shadow-sm bg-white h-100">
+                <h3>Form đăng nhập</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Nhập Email">
+                
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
