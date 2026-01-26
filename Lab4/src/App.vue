@@ -3,9 +3,11 @@ import Bai2 from './components/Bai2.vue';
 import Bai3 from './components/Bai3.vue';
 import Bai4 from './components/Bai4.vue';
 import HelloWorld from './components/HelloWorld.vue'
+import Test from './components/Test.vue';
 </script>
 
 <template>
+  <Test/>
   <Bai2/>
   <Bai3/>
   <Bai4/>
