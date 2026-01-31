@@ -11,7 +11,7 @@
                 <input v-model="info.age" type="text" class="form-control" placeholder="Nhập tuổi ..." />
             </div>
             <div class="mb-3">
-                <label>Họ Email: </label>
+                <label>Email: </label>
                 <input v-model="info.email" type="text" class="form-control" placeholder="Nhập email ..." />
             </div>
 

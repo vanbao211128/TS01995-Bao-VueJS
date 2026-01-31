@@ -21,6 +21,10 @@
       <button @click="submitPost" class="btn btn-success px-5 py-2 fw-bold">
         <i class="fa-solid fa-paper-plane me-2"></i>Đăng bài
       </button>
+      <button @click="doiMauNen" class="btn btn-secondary px-4 py-2 fw-bold ms-3">
+        <i class="fa-solid fa-paintbrush me-2"></i>Đổi màu nền
+      </button>
+      
     </div>
   </div>
 </template>
@@ -31,6 +35,10 @@ const emit = defineEmits(['add-post'])
 const title = ref('')
 const author = ref('')
 const content = ref('')
+const isHighlight = ref(false);
+function doiMauNen(){
+  isHighlight.value = !isHighlight.value;
+}
 function submitPost() {
     if(title.value && author.value && content.value){
         const newPost = {
