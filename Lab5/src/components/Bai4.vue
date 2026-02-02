@@ -1,57 +1,62 @@
 <template>
-    <div class="card shadow-sm p-4 mb-5 bg-body rounded mx-auto text-start" style="max-width: 600px;">
-    <h2 class="text-center mb-4 text-primary">Đăng bài viết mới</h2>
-    
-    <div class="mb-3">
-      <label class="form-label fw-bold">Tiêu đề bài viết</label>
-      <input v-model="title" type="text" class="form-control" placeholder="Nhập tiêu đề...">
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label fw-bold">Tên tác giả</label>
-      <input v-model="author" type="text" class="form-control" placeholder="Nhập tên của bạn...">
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label fw-bold">Nội dung</label>
-      <textarea v-model="content" class="form-control" rows="4" placeholder="Viết nội dung ở đây..."></textarea>
-    </div>
-
-    <div class="text-center">
-      <button @click="submitPost" class="btn btn-success px-5 py-2 fw-bold">
-        <i class="fa-solid fa-paper-plane me-2"></i>Đăng bài
-      </button>
-      <button @click="doiMauNen" class="btn btn-secondary px-4 py-2 fw-bold ms-3">
-        <i class="fa-solid fa-paintbrush me-2"></i>Đổi màu nền
-      </button>
-      
-    </div>
+  <div>
+    <h2>Tạo bài viết mới</h2>
+    <input v-model="title" placeholder="Tiêu đề bài viết" />
+    <input v-model="author" placeholder="Tên tác giả" />
+    <textarea v-model="content" placeholder="Nội dung bài viết"></textarea>
+    <button @click="submitPost">Đăng bài</button>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+
+// Sử dụng defineEmits để emit sự kiện
 const emit = defineEmits(['add-post'])
+
 const title = ref('')
-const author = ref('')
 const content = ref('')
-const isHighlight = ref(false);
-function doiMauNen(){
-  isHighlight.value = !isHighlight.value;
-}
+const author = ref('')
+
 function submitPost() {
-    if(title.value && author.value && content.value){
-        const newPost = {
-            title: title.value,
-            author: author.value,
-            content: content.value
-        }
-        emit('add-post', newPost)
-        title.value = ''
-        author.value = ''
-        content.value = ''
+  if (title.value && content.value && author.value) {
+    const newPost = {
+      title: title.value,
+      content: content.value,
+      author: author.value
+
     }
+
+    // Gửi sự kiện 'add-post' với dữ liệu của bài viết
+    emit('add-post', newPost)
+
+    // Reset fields
+    title.value = ''
+    content.value = ''
+    author.value = ''
+  }
 }
 </script>
 
-<style></style>
+<style>
+input,
+textarea {
+display: block;
+width: 100%;
+margin: 10px 0;
+padding: 10px;
+border-radius: 5px;
+border: 1px solid#ddd;
+}
+button {
+padding: 10px 20px;
+background-color: #3498db;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+</style>
+
+
+

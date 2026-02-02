@@ -11,3 +11,23 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 
 ### 2. Giao diện sau khi tương tác
 ![Giao diện sau khi bấm nút đổi thông điệp](image-3.png)
+
+
+# Bài 2: Two-way Binding với v-model
+### 1. Giao diện nhập liệu
+![Ô nhập liệu trống ban đầu](image-4.png)
+
+### 2. Kết quả Binding thời gian thực
+![Dữ liệu nhập vào được hiển thị ngay lập tức](image-5.png)
+
+
+# Bài 3: Form Thông tin cá nhân (Reactivity)
+### 1. Giao diện Form và Kết quả hiển thị
+![Form nhập thông tin sử dụng Reactive Object](image-6.png)
+
+
+# Bài 4: Ứng dụng Blog cá nhân (Props & Events)
+### 1. Giao diện tổng quan ứng dụng
+![Giao diện gồm Form đăng bài và Danh sách bài viết](image-7.png)
+
+
