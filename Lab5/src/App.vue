@@ -8,9 +8,9 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
  <Bai1/>
-  <Bai2/> 
+  <!-- <Bai2/> 
 <Bai3/> 
-   <!-- <Bai4/> -->
+   <Bai4/> -->
   <div>
     
   </div>
