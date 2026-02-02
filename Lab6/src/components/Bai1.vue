@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="card p-3 shadow-sm border-success">
+        <!-- <div class="card p-3 shadow-sm border-success">
           
             
             <div class="mb-3">
@@ -41,7 +41,7 @@
                     Giá gốc: {{ (soLuong * donGia).toLocaleString() }} VND
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -49,20 +49,20 @@
 import { ref, computed } from 'vue';
 
 const score = ref(0);
-const soLuong = ref(1);
-const donGia = ref(0);
+// const soLuong = ref(1);
+// const donGia = ref(0);
 
 
-const tongThanhTien = computed(() => {
-    let tong = soLuong.value * donGia.value;
+// const tongThanhTien = computed(() => {
+//     let tong = soLuong.value * donGia.value;
     
    
-    if (soLuong.value > 10) {
-        tong = tong * 0.9;
-    }
+//     if (soLuong.value > 10) {
+//         tong = tong * 0.9;
+//     }
     
-    return tong;
-});
+//     return tong;
+// });
 </script>
 
 <style scoped>
