@@ -33,6 +33,8 @@
         <input type="password" class="form-control" v-model="confirmPassword" placeholder="Xác nhận lại mật khẩu">
       </div>
 
+      
+
       <div class="mb-3 text-start">
         <label class="form-label d-block fw-bold">Giới tính</label>
         <div class="form-check form-check-inline">
@@ -67,28 +69,52 @@ export default {
       phone: '',
       password: '',
       confirmPassword: '',
+      role: 'user',
       gender: 'Nam',
       
       agree: false
     }
   },
   methods: {
-
     xuLyDangKy() {
-
-      if (this.username && this.password && this.confirmPassword) {
-
-
-        if (this.password !== this.confirmPassword) {
-          alert("Mật khẩu xác nhận không khớp!");
-          return;
-        }
-
-        alert('Đăng ký thành công: ' + this.username);
-
-      } else {
-        alert('Vui lòng nhập đầy đủ thông tin!');
+      // 1. Kiểm tra nhập đủ thông tin chưa
+      if (!this.username || !this.password || !this.confirmPassword) {
+         alert('Vui lòng nhập đầy đủ thông tin!');
+         return;
       }
+
+      // 2. Kiểm tra mật khẩu khớp không
+      if (this.password !== this.confirmPassword) {
+        alert("Mật khẩu xác nhận không khớp!");
+        return;
+      }
+
+      // 3. Lấy danh sách user cũ từ LocalStorage
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+      // 4. Kiểm tra xem tên đăng nhập đã tồn tại chưa
+      const existingUser = users.find(u => u.username === this.username);
+      if (existingUser) {
+        alert('Tên đăng nhập này đã có người dùng!');
+        return;
+      }
+
+      // 5. Lưu user mới vào mảng
+      const newUser = {
+        username: this.username,
+        password: this.password,
+        role: this.role // Lưu cái vai trò lại
+      };
+      
+      users.push(newUser);
+
+      // 6. Lưu ngược lại vào LocalStorage
+      localStorage.setItem('users', JSON.stringify(users));
+
+      alert('Đăng ký thành công! Hãy đăng nhập.');
+      
+      // 7. Chuyển hướng sang trang Login
+      this.$router.push('/login');
     }
   }
 }
