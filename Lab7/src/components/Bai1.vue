@@ -1,0 +1,56 @@
+<template>
+    <div class="container">
+        <div class="col-12">
+            <h3 class="text-ceter">Quản lý công việc</h3>
+
+            <form @submit.prevent="addList">
+                <div class="mb-3">
+                    <label class="form-label">Tên công việc</label>
+                    <input type="text" class="form-control" v-model="newToDo" placeholder="Nhập tên công việc">
+
+                </div>
+                <button type="submit" class="btn btn-primary">Thêm công việc</button>
+
+            </form>
+            <ul class="list-group mt-4">
+                <li class="list-group d-flex justify-content-between align-items-center" v-for="(job, index) in jobs"
+                    :key="index">
+                    {{ job }}
+                    <button class="btn btn-danger btn-sm" @click="removeList(index)">Xóa</button>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script setup>
+import { onMounted, ref } from 'vue';
+const newToDo = ref('');
+const jobs = ref(['Lập trình', 'Đi học', 'Đá bóng']);
+
+onMounted(() => {
+    const savedJobs = localStorage.getItem('myJobList');
+    if (savedJobs) {
+        jobs.value = JSON.parse(savedJobs)
+    }
+});
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('myJobList', JSON.stringify(jobs.value));
+}
+
+
+const addList = () => {
+    if (newToDo.value.trim()) {
+        jobs.value.push(newToDo.value.trim());
+        newToDo.value = '';
+        saveToLocalStorage();
+    }
+};
+const removeList = (index) => {
+    jobs.value.splice(index, 1);
+};
+</script>
+
+<style></style>
