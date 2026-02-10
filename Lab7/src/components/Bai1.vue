@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="col-12">
+        <div class="col-sm-4 p-5">
             <h3 class="text-ceter">Quản lý công việc</h3>
 
             <form @submit.prevent="addList">
@@ -18,7 +18,7 @@
                     {{ job }}
                     <button class="btn btn-danger btn-sm" @click="removeList(index)">Xóa</button>
 
-                </li>
+                </li>   
             </ul>
         </div>
     </div>
