@@ -6,7 +6,7 @@ import Bai1 from './components/Bai1.vue';
 
 <template>
  <Bai1/>
-</template>
+</template>     
 
 <style scoped>
 
