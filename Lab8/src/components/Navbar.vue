@@ -62,7 +62,7 @@
                             Xin chào, {{ currentUser.username }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><router-link class="dropdown-item" to="/user">Thông tin cá nhân</router-link></li>
+                            <li><router-link class="dropdown-item" to="/profile">Thông tin cá nhân</router-link></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
