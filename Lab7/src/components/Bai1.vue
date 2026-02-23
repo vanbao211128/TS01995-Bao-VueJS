@@ -13,10 +13,10 @@
 
             </form>
             <ul class="list-group mt-4">
-                <li class="list-group d-flex justify-content-between align-items-center" v-for="(job, index) in jobs"
+                <li class="list-group-item d-flex justify-content-between align-items-center" v-for="(job, index) in jobs"
                     :key="index">
                     {{ job }}
-                    <button class="btn btn-danger btn-sm" @click="removeList(index)">Xóa</button>
+                    <button class="btn btn-danger " @click="removeList(index)">Xóa</button>
 
                 </li>   
             </ul>

@@ -9,9 +9,9 @@ import Bai4b from './components/Bai4b.vue';
 </script>
 
 <template>
- <!-- <Bai1/>
- <Bai2/> -->
- <!-- <Bai3/> -->
+ <Bai1/>
+ <Bai2/> 
+  <Bai3/>
 
   <Bai4b/>
 </template>     

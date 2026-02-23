@@ -1,32 +1,35 @@
 <template>
-    <div class="col-sm-4 m-5">
-        <h2>Bình luận bài viết</h2>
-        <div class="card">
-            <img src="C:\Users\HP\Downloads\TS01995-Bao-VueJS\Lab7\src\assets\images\eat-clean.png" alt="Hình ảnh" />
-            <div class="card-body">
-                <h3 class="card-title">8 loại rau củ quả giau canxi</h3>
-                <p class="card-text">Canxi là khoáng chất cần thiết đối với cơ thể người. Có nhiều cách để bổ sung
-                    canxi, trong đó bổ sung qua đường ăn uống là cách tốt nhất. Có 8 loại rau củ giau canxi ...</p>
+    <div class="row justify-content-center mt-4">
+        <div class="col-12 col-md-8 col-lg-6">
+            <h2>Bình luận bài viết</h2>
+            <div class="card">
+                <img src="C:\Users\HP\Downloads\TS01995-Bao-VueJS\Lab7\src\assets\images\eat-clean.png"
+                    alt="Hình ảnh" />
+                <div class="card-body">
+                    <h3 class="card-title">8 loại rau củ quả giau canxi</h3>
+                    <p class="card-text">Canxi là khoáng chất cần thiết đối với cơ thể người. Có nhiều cách để bổ sung
+                        canxi, trong đó bổ sung qua đường ăn uống là cách tốt nhất. Có 8 loại rau củ giau canxi ...</p>
 
+                </div>
+            </div>
+            <form @submit.prevent="submitComment">
+                <div class="mt-3">
+                    <textarea id="commentText" class="form-control" rows="3" v-model="commentText"
+                        placeholder="Nhập bình luận của bạn"></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-success">Gửi bình luận</button>
+            </form>
+            <div v-if="comments.length" class="mt-3">
+                <h5>Danh sách các bình luận: </h5>
+                <ul style="list-style-type: circle;">
+                    <li v-for="(comment, index) in comments" :key="index">
+                        <p><strong>{{ comment.name }}</strong>: {{ comment.text }}</p>
+                    </li>
+                </ul>
             </div>
         </div>
-        <form @submit.prevent="submitComment">
-            <div class="mt-3">
-                <textarea id="commentText" cols="60" v-model="commentText"
-                    placeholder="Nhập bình luận của bạn"></textarea>
-
-            </div>
-
-            <button type="submit" class="btn btn-success">Gửi bình luận</button>
-        </form>
-        <div v-if="comments.length" class="mt-3">
-        <h5>Danh sách các bình luận: </h5>
-        <ul style="list-style-type: circle;">
-            <li v-for="(comment, index) in comments" :key="index">
-                <p><strong>{{ comment.name }}</strong>: {{ comment.text }}</p>
-            </li>
-        </ul>
-    </div>
     </div>
 </template>
 
@@ -34,17 +37,17 @@
 import { ref } from 'vue';
 
 const props = defineProps(['username']);
-const commentText = ref('');    
+const commentText = ref('');
 const comments = ref([]);
 
-function submitComment(){
+function submitComment() {
 
-    if(commentText.value.trim()){
+    if (commentText.value.trim()) {
         comments.value.push({
-            name: props.username, 
+            name: props.username,
             text: commentText.value
         });
-        commentText.value = ''; 
+        commentText.value = '';
     }
 }
 </script>

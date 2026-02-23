@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="row justify-content-center">
         <div v-if="!isLoggedIn" class="p-5  col-sm-4">
             <h3>Form đăng nhập</h3>
             <form @submit.prevent="login">
